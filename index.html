@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Survey Results</title>
+
+<script src="Survey_Analysis_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Survey_Analysis_files/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="Survey_Analysis_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Survey_Analysis_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Survey_Analysis_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Survey_Analysis_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="Survey_Analysis_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="Survey_Analysis_files/tocify-1.9.1/jquery.tocify.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="Survey_Analysis_files/highlight/default.css"
+      type="text/css" />
+<script src="Survey_Analysis_files/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="Survey_Analysis_files/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: -22px; }
+.code-folding-btn.collapsed { margin-bottom: 4px; }
+</style>
+<script src="Survey_Analysis_files/navigation-1.1/codefolding.js"></script>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Survey Results</h1>
+
+</div>
+
+
+<p><br> <br></p>
+<div id="the-outside-exam-first-year-exam" class="section level1">
+<h1><span class="header-section-number">1</span> The Outside Exam (First Year Exam)</h1>
+<div id="how-valuable-to-your-training-as-a-scientist-would-you-rate-the-outside-exam" class="section level2 tabset">
+<h2><span class="header-section-number">1.1</span> How valuable to your training as a scientist would you rate the outside exam?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt1-1.png" width="864" /> <code>1: Little/no value - 5: Extremely valuable</code></p>
+<div id="mcb-responses-by-year" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt1_2-1.png" width="864" /> <code>1: Little/no value - 5: Extremely valuable</code></p>
+</div>
+<div id="neuro-responses-by-year" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt1_3-1.png" width="864" /> <code>1: Little/no value - 5: Extremely valuable</code></p>
+</div>
+</div>
+<div id="how-specifically-would-you-say-the-expectations-of-the-exam-were-laid-out-for-you" class="section level2 tabset">
+<h2><span class="header-section-number">1.2</span> How specifically would you say the expectations of the exam were laid out for you?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt2-1.png" width="864" /> <code>1: Little/no specific - 5: Very specific</code></p>
+<div id="mcb-responses-by-year-1" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt2_1-1.png" width="864" /> <code>1: Little/no specific - 5: Very specific</code></p>
+</div>
+<div id="neuro-responses-by-year-1" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt2_2-1.png" width="864" /> <code>1: Little/no specific - 5: Very specific</code></p>
+</div>
+</div>
+<div id="would-you-agree-with-the-statement-prior-to-taking-my-outside-exam-i-had-a-strong-understanding-of-what-i-needed-to-accomplish-in-order-to-pass." class="section level2 tabset">
+<h2><span class="header-section-number">1.3</span> Would you agree with the statement: ‘Prior to taking my outside exam, I had a strong understanding of what I needed to accomplish in order to pass.’?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt3_1-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-2" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt3_2-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-2" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt3_3-1.png" width="864" /></p>
+</div>
+</div>
+<div id="how-prepared-for-the-exam-did-you-feel-prior-to-taking-it" class="section level2 tabset">
+<h2><span class="header-section-number">1.4</span> How prepared for the exam did you feel prior to taking it?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt4-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-3" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt4_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-3" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt4_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="how-prepared-for-the-exam-did-you-feel-following-it" class="section level2 tabset">
+<h2><span class="header-section-number">1.5</span> How prepared for the exam did you feel following it?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt5-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-4" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt5_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-4" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt5_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="what-format-for-the-oral-part-of-the-outside-exam-do-you-believe-would-be-most-useful-for-your-training-as-a-scientist" class="section level2 tabset">
+<h2><span class="header-section-number">1.6</span> What format for the oral part of the outside exam do you believe would be most useful for your training as a scientist?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt6-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-5" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt6_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-5" class="section level3">
+<h3><span class="header-section-number">1.6.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt6_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="what-format-for-the-written-part-of-the-outside-exam-do-you-believe-would-be-most-useful-for-your-training-as-a-scientist" class="section level2 tabset">
+<h2><span class="header-section-number">1.7</span> What format for the written part of the outside exam do you believe would be most useful for your training as a scientist?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt7-1.png" width="864" /><img src="Survey_Analysis_files/figure-html/plt7-2.png" width="864" /></p>
+<div id="mcb-responses-by-year-6" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt7_1-1.png" width="864" /><img src="Survey_Analysis_files/figure-html/plt7_1-2.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-6" class="section level3">
+<h3><span class="header-section-number">1.7.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt7_2-1.png" width="864" /><img src="Survey_Analysis_files/figure-html/plt7_2-2.png" width="864" /></p>
+</div>
+</div>
+<div id="what-do-you-think-the-most-important-learning-objective-for-students-completing-their-outside-exam-is" class="section level2 tabset">
+<h2><span class="header-section-number">1.8</span> What do you think the most important learning objective for students completing their outside exam is?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt8-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-7" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt8_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-7" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt8_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="how-difficult-would-you-say-the-outside-exam-was-to-pass" class="section level2 tabset">
+<h2><span class="header-section-number">1.9</span> How difficult would you say the outside exam was to pass?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt9-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-8" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt9_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-8" class="section level3">
+<h3><span class="header-section-number">1.9.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt9_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="do-you-believe-there-were-any-consequences-for-failing-the-outside-exam" class="section level2 tabset">
+<h2><span class="header-section-number">1.10</span> Do you believe there were any consequences for failing the outside exam?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt10-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-9" class="section level3">
+<h3><span class="header-section-number">1.10.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt10_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-9" class="section level3">
+<h3><span class="header-section-number">1.10.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt10_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="student-feedback" class="section level2 tabset">
+<h2><span class="header-section-number">1.11</span> Student Feedback</h2>
+<p><img src="out.png" /></p>
+<div id="mcb" class="section level3">
+<h3><span class="header-section-number">1.11.1</span> MCB</h3>
+<p>The expectations for the written portion was much clearer than for the oral exam. Oral exam style presentations should be practiced in Proseminar for the outside, as most people have never done a chalk talk prior to grad school</p>
+<p>I would like to see more support through out the process of writing and preparing for the defense. It’s a little unfair to expect students who have never done this before go into it without guidance and set people up to be successful. Deadlines and meetings and disscussions regarding progress would be helpful.</p>
+<p>I almost gave up grad school because of both of my exams. I never felt prepared and instead of constructive criticism all I got back was offensive and humiliating feedback. My committee also had different expectations of the length of my written proposal, although no one has ever told me how long should it be…During proseminar we never got the chance to practice in front of the faculty. This experience did not make me a better scientist, instead it made me feel like I was not good enough for anything … today I consider myself a very successful scientist. Not thanks to any of the qualifying exam experiences or “preparation”.</p>
+<p>The outside exam, was very clear and took a significant amount of time, thought, and preparation. The exam had to be on a subject outside your field, outside of something you worked on as a rotator, and faculty that one rotated with could not be on the committee. It was a rigorous exam. Today, I do not believe this is the case. The exam appears to have deteriorated significantly, partially due to changes in format and ill-conceived new objectives. Seems more like a joke at this point. The students do not appear to be taking it as seriously at this point.</p>
+<p>I generally like the concept of the MCB outside exam. However since each year’s exams are judged by different faculty members and the expectations are not well defined the outside exam doesn’t properly gauge each student’s ability on an equal level.</p>
+<p>I thought the outside exam was a great learning experience. It taught me so much about how to think and speak like a scientist. In addition, defending my ideas in front of professors forced me to spend a copious amount of time preparing for it. I personally feel like a major reason some current grad students are against changing the way the outside is done is because they want to perpetuate the struggle that they went through. I say this because I appreciate that the faculty are willing to change the way these things are done to better serve incoming students for their future careers. I do think the current system for MCB students could be improved by making the expectations more clear so the students know how to prepare. For example, when I took this exam I thought I was being tested on knowledge of the field, experimental design, and defending ideas in front of other scientists. If there are more expectations or there are different ones then perhaps that could be stated clearly.</p>
+</div>
+<div id="neuro" class="section level3">
+<h3><span class="header-section-number">1.11.2</span> Neuro</h3>
+<p>I found the outside exam incredibly useful, albeit challenging experience. It was my first attempt at writing a grant, generating hypotheses, how to test them, and interpret/analyze results. It forced me not only to think things through while planning experiments for the written document, but also how to think on my feet and answer questions during the defense. It was a valuable lesson in humility, with faculty questioning my knowledge until I had to admit I simply did not know; but also confidence, as I realized just how much I had learned even within a single year of graduate school about scientific thought process….preparing for the exam was difficult given the lack of direction about what format was required/expected, I felt prepared because I had spoken to senior students and gotten examples of their written documents to help me. However, it was frustrating to not receive a clear message from the faculty about what was expected, and what exactly the purpose of the exam was, and in fact I received varied, and even contradictory advice from faculty.</p>
+<p>Clearer outline of expectations</p>
+<p>defense of the outside was a miserable experience for me…The comments and criticisms seemed more a way for the faculty to confirm how smart and accomplished they were, than a place for me to learn. It left me without confidence, totally shattered me and has left me bitter with anger to this day.There are no checks and balances when you are locked away with them, they can go totally out of control and there is no one to stop it</p>
+<p>More definitive instructions of the write-up and presentations will be helpful.</p>
+<p>I think the most surprising thing was finding out who had passed and who had failed. I thought that the majority of the presentations were of approximately equal quality, but it seems like at least one of the people that failed just didn’t have the expected content. The problem is that we were never told how to format the talk (is it a rotation report? is it like a mini-pizza talk? is it a journal club?) and I feel that, for some of the people who failed, the biggest problem was knowing what to put in and not at all a question of competence</p>
+<p>There needs to be more structure and clearer guidelines for the outside, starting with the rotation reports (every PI had different, and in my opinion, not very high expectations), and enforced all year leading up to the exam. My cohort’s anxiety over the rotation reports and outside was unjustified because both were actually really easy. Compared to other programs, our outside exam was a joke. I expected something more like a “qual” where people actually fail and have to retake it, or at least submit revisions to their written documents. Giving a 15 minute presentation and writing a ~10 page write-up on a rotation was interesting and helpful to my scientific training, but not as much of a challenge as it could’ve been.</p>
+<p>Given that most of us have extremely little grant writing/presenting experience, I believe that an outside designed to teach us this skill would be the most beneficial. In addition to learning to work through the actual grant template, it forces us to form and research hypotheses and exercise experimental thinking. If outsides are designed to be extended rotation reports, we end up explaining and defending someone else’s research design and hypothesis, which is less beneficial…I believe it is very important to have a better idea of what is expected in for the outside. I also believe that they should be a little more rigorous, but with a caveat. It is unreasonable for us to create a well designed/researched/practiced outside while also juggling a rotation (which is ending meaning we likely needed to prepare for a lab meeting), classes (which tend to ramp up at the end of the semester), and the stress of not necessarily knowing which is our thesis lab. Given this, why not have the outside ~month after classes and rotations have ended? Make it harder, sure, but give us the time/ability to give it justice and invest in something we can defend.</p>
+<p>I feel like the structure of the oral is OK. As opposed to a closed committee of approximately 3 p.i.’s, we got to present to a room filled with some of the best neuroscientists in the world. I remember specifically for me, this resulted in a well rounded Q &amp; A session with different perspectives spanning genetics to molecular to computational…What could be changed to increase the difficulty (but also to make us better scientists) is having the written component being clearly defined as a grant. Although we were told that was the format, we were also told not to worry about formatting it as a grant. I believe having the written portion clearly defined as a grant plus the new oral presentation style will be a challenging and well rounded outside.I don’t believe the outside should be about failing people out of Brandeis and being senselessly difficult.</p>
+<p>I felt like there was almost no transparency leading up to the exam as to how we would be graded. It was a complete surprise to see the form that faculty were filling out after the fact. There were several factors that they rated us on that I did not anticipate being rated on, which would have been helpful to know in advance. If there is going to be a rubric that we must meet specific requirements for I think it is necessary that we have access to that beforehand.</p>
+<p>My outside exam was in the previous format, where the topic was meant to be outside my intended research area, and the structure was centered around aims (similar to a grant). I thought most everyone took this quite seriously, and that it was a valuable exercise. I still do not understand why it was changed to the current format.</p>
+<p>What was most dissatisfactory about the exam was that there were no guidelines laid out. There needs to be a written document that establishes a protocol so that every student and faculty member has the same understanding of the exam and its goals and purpose. Secondly, there needs to be a larger purpose to the exam than just the faculty trying to make you stumble over what you do not know and they obviously do. Finally, although not everyone has decisively joined a lab by the time of the exam, I think it should aim to be relevant to work the student is interested in pursuing for a thesis project, as an initial forced literature search of the topic and synthesis of ideas.</p>
+<p>It could be a great opportunity to practice (and be critiqued on) presenting scientific ideas. Anything that pushes trainees to: form a hypothesis, propose an experiment, format it in a coherent way, write about it, present it (and experience feedback on writing, and presentation) would prepare trainees for future exams, pizza talks, and careers after school…. equally helpful would be structuring the outside exam identically to the inside exam. Writing an NRSA-style grant proposal and receiving constructive and detailed feedback on the report would certainly help prepare trainees for future exams and careers as scientists…my major complaint is the lack of feedback given trainees. My exam was in the format of a detailed rotation report and a 20 minute presentation. It felt simply like a hoop to jump through. I received virtually no criticisms on either my report, or my presentation. This certainly did not prepare me for writing an NRSA-style grant proposal the following year for my Inside Exam. Likewise, the lack of constructive criticism left me with no known strengths/weaknesses to work on. Regardless of the format of the exam,the Outside should have more of an emphasis on writing (that requires researching primary literature as opposed to a glorified rotation report). To make the exam as useful as possible, this written component should be sternly graded with detailed criticisms by faculty to better prepare trainees for future requirements.</p>
+<p>I felt as if the outside exam was an extension of the rotation report. I benefited from this because it was a formal presentation in front of faculty and students- the only department-wide presentation prior to pizza talk in 3rd year. So I was relatively comfortable giving my first pizza talk because the faculty didn’t terrify me as much. However, the written component was “a greatly expanded version of one rotation report,” without further guidelines. Perhaps it would have been better (and more relevant) to instruct a specific format like journals require of manuscripts (word limit, fonts, formatting, figure specifications, etc). Also, I would require for the student to choose the rotation that is now their thesis lab to further solidify their understanding and to start practicing presenting basic background information…all of this should be simply termed “first-year presentations” and not be considered the outside exam. The outside exam should be grant formatted and due at the end of the summer of first year (prior to TAing and 2nd year courses). Instead of having a committee, this version of the exam will solely be evaluated by the student’s thesis advisor. This will forge stronger relationships by having the student discuss potential thesis projects and share several drafts. Upon successful completion, the thesis advisor and department will work towards submitting the outside exam for grant submmission.</p>
+<p>To elaborate further on what I’ve tried to reflect in my responses above, my own experience with the outside was characterized strongly by a break-down in the communication of expectations between myself and the faculty as the exam progressed from proposal stage to the finished product. In that year, we had the freedom to choose our own topic to be shaped into a mock grant proposal, so long as it was, loosely speaking, “”unrelated“” to the work we did in the lab. It turned out that freedom itself may have been the basis of the breakdown. The proposing student expects that their choice of topic will be closely tied to strong expectations as to which methods should ground the proposed research agenda, thus they accordingly constrain their choice of topic to methods that they expect they’ll reasonably be able to assimilate in a short time. Once the proposal is submitted, however, several implicit constraints are being placed on what the final committee will accept as the “”best approach“” to the research problem in question as the organizing faculty member begins to make their own decisions about how best to do so and, I presume, selects the faculty committee accordingly. This decision is, of course, further constrained by the research interests and approaches already represented by the existing faculty in the department and who is available to serve on a committee at the time. So if, say for example, I chose to investigate the olfactory bulb using primarily electrophysiological techniques supplemented with select molecular manipulations and the appropriateness of this approach is backed up by trends in some subset of the literature, but the committee selected for me consists primarily of scientists who’s work is based in molecular techniques and they feel strongly that the question is best addressed purely through a molecular approach, then my original intentions at the proposal stage have become effectively irrelevant. I would like to have seen an organizational mechanism in place that could have made that information explicit to me during the proposal stage so that I was free to revise, rather than find out that I’ve followed a path contrary to the committee’s expectations during the oral examination itself. In other words, for the process to have gone smoothly, I feel that I would have needed access to meta-information about prevailing attitudes in different sub-disciplines toward to the research topic I’d selected, including the attitudes of our local faculty, and more importantly about the organizational constraints on how my committee would be selected in order to get a good read on the expectations. Despite my willingness to do so at the time, I didn’t know where to seek this information, who to ask, or even how to frame the question. It’s possible these issues could be mitigated by constraining a priori the range of possible topics on which the proposals would be written. Each topic option then could be accompanied by clear “”recommendations“” from the faculty as to which general methodologies are likely to be used in a proposal with the “”best approach“”. The statement could be as simple as, for example: “”This topic is likely best addressed using molecular, electrophysiological and imaging techniques“”, or “”We expect that a successful submission should include but is not limited to molecular, electrophysiological and imaging techniques.</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="the-inside-exam-second-year-exam" class="section level1">
+<h1><span class="header-section-number">2</span> The Inside Exam (Second Year Exam)</h1>
+<p><br></p>
+<div id="how-valuable-to-your-training-as-a-scientist-would-you-rate-the-inside-exam" class="section level2 tabset">
+<h2><span class="header-section-number">2.1</span> How valuable to your training as a scientist would you rate the inside exam?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt12-1.png" width="864" /> <code>1: Little/no value - 5: Extremely valuable</code></p>
+<div id="mcb-responses-by-year-10" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt12_2-1.png" width="864" /> <code>1: Little/no value - 5: Extremely valuable</code></p>
+</div>
+<div id="neuro-responses-by-year-10" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt12_3-1.png" width="864" /> <code>1: Little/no value - 5: Extremely valuable</code></p>
+</div>
+</div>
+<div id="how-specifically-would-you-say-the-expectations-of-the-exam-were-laid-out-for-you-1" class="section level2 tabset">
+<h2><span class="header-section-number">2.2</span> How specifically would you say the expectations of the exam were laid out for you?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt13-1.png" width="864" /> <code>1: Little/no specific - 5: Very specific</code></p>
+<div id="mcb-responses-by-year-11" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt13_1-1.png" width="864" /> <code>1: Little/no specific - 5: Very specific</code></p>
+</div>
+<div id="neuro-responses-by-year-11" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt13_2-1.png" width="864" /> <code>1: Little/no specific - 5: Very specific</code></p>
+</div>
+</div>
+<div id="would-you-agree-with-the-statement-prior-to-taking-my-inside-exam-i-had-a-strong-understanding-of-what-i-needed-to-accomplish-in-order-to-pass." class="section level2 tabset">
+<h2><span class="header-section-number">2.3</span> Would you agree with the statement: ‘Prior to taking my inside exam, I had a strong understanding of what I needed to accomplish in order to pass.’?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt14_1-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-12" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt14_2-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-12" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt14_3-1.png" width="864" /></p>
+</div>
+</div>
+<div id="how-prepared-for-the-exam-did-you-feel-prior-to-taking-it-1" class="section level2 tabset">
+<h2><span class="header-section-number">2.4</span> How prepared for the exam did you feel prior to taking it?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt15-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-13" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt15_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-13" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt15_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="how-prepared-for-the-exam-did-you-feel-following-it-1" class="section level2 tabset">
+<h2><span class="header-section-number">2.5</span> How prepared for the exam did you feel following it?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt16-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-14" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt16_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-14" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt16_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="what-format-for-the-written-part-of-the-inside-exam-do-you-believe-would-be-most-useful-for-your-training-as-a-scientist" class="section level2 tabset">
+<h2><span class="header-section-number">2.6</span> What format for the written part of the inside exam do you believe would be most useful for your training as a scientist?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt17-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-15" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt17_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-15" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt17_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="what-do-you-think-the-most-important-learning-objective-for-students-completing-their-inside-exam-is" class="section level2 tabset">
+<h2><span class="header-section-number">2.7</span> What do you think the most important learning objective for students completing their inside exam is?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt18-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-16" class="section level3">
+<h3><span class="header-section-number">2.7.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt18_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-16" class="section level3">
+<h3><span class="header-section-number">2.7.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt18_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="how-difficult-would-you-say-the-inside-exam-was-to-pass" class="section level2 tabset">
+<h2><span class="header-section-number">2.8</span> How difficult would you say the inside exam was to pass?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt19-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-17" class="section level3">
+<h3><span class="header-section-number">2.8.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt19_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-17" class="section level3">
+<h3><span class="header-section-number">2.8.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt19_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="do-you-believe-there-were-any-consequences-for-failing-the-outside-exam-1" class="section level2 tabset">
+<h2><span class="header-section-number">2.9</span> Do you believe there were any consequences for failing the outside exam?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt20-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-18" class="section level3">
+<h3><span class="header-section-number">2.9.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt20_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-18" class="section level3">
+<h3><span class="header-section-number">2.9.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt20_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="student-feedback-1" class="section level2 tabset">
+<h2><span class="header-section-number">2.10</span> Student Feedback</h2>
+<p><img src="inside.png" /></p>
+<div id="mcb-1" class="section level3">
+<h3><span class="header-section-number">2.10.1</span> MCB</h3>
+<p>the inside was ‘easier’ to confront because it was the exact same format as the outside, and so expectations for both the written and oral portions were clear.</p>
+<p>I would have liked more support from my PI. I did not know if my ideas were sound and my PI was under the impression they could not provide any input and therefore I felt vulnerable because I didn’t have a senior person to guide me through the process.</p>
+<p>the experience of preparing for the inside exam was valuable to me– but it could be a LOT better. I think the inside should be restructured as writing a complete practice NRSA. A lot of students won’t be competitive for the real NRSA or have enough data by this point, but the practice of writing one would be invaluable.</p>
+<p>Similar to the outside, we were never told the expectations (Size, depth…) for this exam. Committee was not supportive at all, instead treated me like a child who doesn’t know better. I don’t understand the point of this exam. I honestly thought that the goal of the inside was to teach us how to think scientifically and to debate our ideas and get feedback that would help us grow as a scientist. Instead I was deeply humiliated and had a horrible time. No support at all from the committee.</p>
+<p>I think that the expectations and general workings of inside exams vary greatly depending on the lab that you join. It is also difficult when you join a more molecular neuroscience lab, because typically there are people from both disciplines on your committee. This can be difficult to judge what the expectations will be by the faculty of each discipline, since both programs are structured so differently in terms of the Outside.</p>
+<p>Passing the inside exam seemed like a forgone conclusion. The committee did not appear to care.</p>
+<p>I thought the written portion could have been much more useful than it was. The written portion should only be accepted in a grant style with the expectation that it will be submitted. I think my committee only skimmed my written document. My impression is that my committee only let me pass because they didn’t want to meet with me again or read a rewrite.</p>
+</div>
+<div id="neuro-1" class="section level3">
+<h3><span class="header-section-number">2.10.2</span> Neuro</h3>
+<p>I think it should be made clear/decide among faculty whether or not the inside serves as an NRSA review section, or if it is meant to serve as a thesis proposal. The style of writing/defense of ideas is very different between these two and given the change from year 3 to 2 of program, it makes more sense to structure this to help ensure students have a well-thought out experimental plan for their thesis/PhD project, rather than simply critique a grant application, which presumably their own PI mentor can do.</p>
+<p>the format of the Inside should be established concretely. It seems as if some faculty believe it is an exercise in grant writing and some do not. I know the program is currently making changes to better prepare trainees for writing grant proposals, but by the time my Inside came around, I had never read or written or otherwise learned of how to format a grant proposal. If the main point of the exam is to be an exercise in grant writing; trainees should receive instruction on grant writing prior to their Inside Exam. However, if the main point of the exam is to challenge trainees to layout the experimental path their thesis could take, then perhaps a grant proposal is not the best format for the written component…I feel that the Inside would be much more useful if trainees were given thoughtful criticisms and advice post-exam.</p>
+<p>I think the inside exam, in my case, was a nice exercise in bringing in feedback from faculty not entirely familiar with my project about the big picture idea of my work. The important factor to keep in mind, though, is that I defended my inside at the end of my 3rd year - by that time I had a really good sense of what experiments were feasible and didn’t propose anything that I wouldn’t actually be able to do. With the current system of (almost!) forcing students to do their inside exams at the end of the 2nd year, it seems that many people are proposing experiments that are sort of hypothetical - it has to be kept in mind that many labs in the program don’t work with molecular methods, and instead require complex surgical and computational skills that take almost a year to be even comfortable with. In that scenario, a student at the end of her/his 2nd year has virtually no idea about the experiments that can be achieved with the technology available in the lab….I feel that I am lucky to have a very responsive committee - my feeling is that’s not the case for everyone. It would definitely help if the faculty do not look at the inside as an exam and instead think of it as a means to expand the student’s horizons as a scientist. My exam felt like more of a discussion of peers, not intent on ‘failing’ or ‘passing’ someone but instead critiquing a piece of science. I think it would help if all committees go along those lines - after all the inside is as much a faculty exam as a student exam</p>
+<p>The inside exam was much better, partially because I picked faculty that are just. It no longer felt like a hazing event but more like what I expected, rigorous questions and criticisms meant to help me refine my craft.</p>
+<p>I think a requirement to write a lit review that could be submitted as a review article would have been useful for me. I think the NRSA format is also useful but not as expansive as a lit review.</p>
+<p>I feel that under the current system, the amount that the student gets out of the Inside is largely based on how much effort the student decides to put into the proposal. I found it very helpful and I still refer to the text that I wrote when I need to quickly brush up on some references. I think that another prominent issue is that defenses for the Inside vary wildly. I always feel that I meet my committee’s expectations easily, but I am completely convinced that I could fail with a different committee. This isn’t to say that my committee is “easy,” but I just happen to value/know the things that they expect whereas other faculty may be focused on information that I am not.</p>
+<p>Although I feel that the inside exam should also be formatted as a grant, the objective should be to generate a hypothesis and defend that in front of a committee. If the outside exam was more geared toward generating a competitive grant, then the inside could be less focused on that aspect.</p>
+<p>As someone that had never written or read a grant, it would have been helpful to do that, and understand that that was the expectation for the inside. I see that this is offered to people planning to write grants already, and would have taken advantage of it if I had had a clear understanding of expectations, and probably gotten more out of the writing section. Also, knowing at the start of the year that we are expected to give the inside at the start of summer would have been nice.</p>
+<p>I think the inside should be more rigorous, but without harsh consequences for a student’s future in the program. That way, the student gets realistic feedback on their ability to write a grant, but they don’t fear for their graduate school lives in the process. My inside evaluation could have been taken a lot more seriously. I made it very clear that I wanted my inside to be a lead in to an actual grant submission. After the exam, I was told “hey, that was a really good job!” verbally, but received little real criticism. I also had difficulty getting my members to complete the written rubric, even though I gave it to them in paper and PDF form. I don’t feel like I came out of it having any new insight into the viability of my document as a competitive NRSA. I made some additional changes and submitted the document, but didn’t get a good enough score for funding–I wonder if time could have been saved with a more serious critical evaluation…I propose: students are given the NRSA guidebook, and told to follow the instructions for producing a Research Strategy document. Students work with their advisor to develop a viable research plan, and the advisor provides them with examples of previously funded NRSA research strategies from the lab as a guide. The student then submits their own document NOT to their committee, but to a yearly rotating Brandeis Study Section(s) of faculty members who have volunteered to pre-evaluate student strategies. This study section reviews and comments on the strategy exactly the way they would when they serve on a real study section, providing an impact score AND summary statements. Impact scores below 50 are considered “redos” and must be resubmitted. Above 50 yet below 20 can be resubmitted and evaluated again if the student wants additional training in grant writing, in the same format as the real NRSA, but this isn’t a requirement for passing the inside. Scores of 20 and below are considered “fundable” and won’t be re-evaluated. This solves many problems: the current lack of real training in grant writing, overwhelmed faculty don’t get saddled with more responsibilities they don’t want and won’t take seriously, students receive clear expectations of what it takes to pass, straight from the NIH guidebook.</p>
+<p>because it varies dramatically between committees, it was very difficult to know what to expect. This is inherently difficult to resolve given that each faculty member has their own style of research. In my case, someone suggested one of my aims be fairly exploratory, when it wasn’t well enough supported by the literature to justify the study coherently, which resulted in a conditional pass for me. While I am a joint student and so this again is further complicated by having multiple inputs, I can only point out that a difficult question is where we draw the line between “passing” and not “passing” as the metrics of success can be so differently thought of between committees. In some instances, I was told by some to think of it as hazing ritual and that I didn’t need to worry about passing, and that everyone passes. In some cases, I was informed it was very important I pass. What I am trying to point out is that it is not only the perceived “success” of a student to prepare and execute the exam, but additionally how seriously or not to take it was nebulous. I felt like I completely failed by having gotten a conditional pass, as I had such mixed messages about expectations and the seriousness of the process.</p>
+<p>My inside was essentially a grant proposal that was submitted months prior. In that regard, I felt it was more of a formality than helpful exercise for me. However, I think the inside is a very good opportunity for a student that intends to submit a grant to get some practice.</p>
+<p>I feel that the outcome of the inside exam experience depends strongly on the quality of the working relationship between the student, the PI and the committee members. But it’s very easy for the apparatus of the grad student “life cycle” to click into place, delivering us to that meeting before those working relationships have been fully established. In contrast to the outside exam, I went into my own inside exam very much looking forward to the opportunity to get feedback on my research from faculty who’s opinions I strongly respected. I was taken aback, however, by how far apart my PI’s ideas for the best approach were from that of the committee members. The result was, to some degree, a negative feedback loop where to really improve my research I needed to be able to work more closely with my committee members, but they were less likely to make themselves available because they were so unenthused with the plan as initially presented. Furthermore, the opportunity to clarify expectations or to take the initiative to seek out a consensus on my own were hampered by mixed messages, both from my PI and from the faculty in general, about whether I should be pro-active or I needed “permission” to approach the individual faculty on the committee for help.</p>
+<hr />
+<hr />
+</div>
+</div>
+</div>
+<div id="proseminar" class="section level1">
+<h1><span class="header-section-number">3</span> Proseminar</h1>
+<p><br></p>
+<div id="do-you-feel-that-proseminar-provided-a-valuable-learning-experience-to-your-graduate-education" class="section level2 tabset">
+<h2><span class="header-section-number">3.1</span> Do you feel that proseminar provided a valuable learning experience to your graduate education?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt23-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-19" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt23_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-19" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt23_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="what-topics-would-you-most-like-to-see-covered-in-a-proseminar-course" class="section level2 tabset">
+<h2><span class="header-section-number">3.2</span> What topics would you most like to see covered in a proseminar course?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt24-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-20" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt24_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-20" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt24_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="do-you-think-that-grant-writingsubmission-should-be-made-a-mandatory-aspect-of-first-year-grad-student-training" class="section level2 tabset">
+<h2><span class="header-section-number">3.3</span> Do you think that grant writing/submission should be made a mandatory aspect of first year grad student training?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt26-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-21" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt26_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-21" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt26_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="proseminar-feedback" class="section level2 tabset">
+<h2><span class="header-section-number">3.4</span> Proseminar Feedback</h2>
+<div id="mcb-students" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> MCB Students</h3>
+<p>We had it for 3 hours on one day only. That was awful. It would be more productive if it was twice a week for a shorter amount. Additionally we had no chance to practice a chalk talk in front of faculty, and that would have been great. I wish we were taught how to write a scientific paper, because I still struggle. We spent too much time with “news and views” and little to no time with actually preparation for the qualifying exam.</p>
+<p>more practice with oral exam, more writing. maybe should meet twice a week for 1.5 hours?</p>
+<p>Jim’s course is really good</p>
+<p>I very much enjoyed proseminar, and I really liked when we peer reviewed the work from other people in the class. This not only helped us see how other people might write or formulate an idea, but it also helped establish connections between students early on in the program, which was so great!</p>
+<p>Piali did ours. She was very good.</p>
+<p>The format and curriculum is overly dependent on the individual instructor(s).</p>
+<p>It should be the place where the inside and outside expectation are clearly laid out. Should also be a focus on how to critically read literature.</p>
+<p>The proseminar course seems to be hit or miss for its effectiveness and this is largely based on the faculty who teach it. My year was fairly rigorous, but I’ve seen other years in which the instructor did not really provide instruction to the students. They didn’t seem to care.</p>
+<p>I loved proseminar. It was a stressful class but when it was over I felt much more prepared to accomplish the expected assignments for grad school. It was particularly useful for me because I had been out of school several years and it was the perfect crash course to brush up on my scientific communications skills.</p>
+</div>
+<div id="neuro-students" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Neuro Students</h3>
+<p>proseminar in no way prepared us for the outside (we only received a few generic pointers and spent most of the time reading random papers and presenting them)</p>
+<p>While I do think the current format of each student giving a presentation on a research article helps develop necessary presentation skills, I wish at least a few class sessions had been devoted to other practical skills such as grant writing. It also might have been helpful to hear from senior grad students some advice about how to pick a lab, what to expect when TAing, how funding works, etc. Basically, I think proseminar would benefit from focusing on a more broad range of skills that grad students need to develop, rather than just presentations every class.</p>
+<p>It would be helpful if students read actual grants in the proseminar - all of our faculty have examples of funded and non-funded grants. Different faculty can be brought in every week to discuss the hows and the whys of the experiments they proposed in their grants - why did they write it in the way they did and so on.</p>
+<p>I think that combining MCB and Neuro in proseminar has been a mistake. We are missing a critical opportunity in the first year to evaluate literature spanning the breadth of neuroscience, and which may or may not be represented in faculty labs at Brandeis. This becomes very difficult beyond the first year, when efforts are primarily focused narrowly on thesis research. I also feel that the proseminar course has been “information overload” as we are expected to cover up to 6 papers per week. We would benefit from delving deeper into individual papers. Furthermore, I would be much more engaged every meeting if I were expected to present at least one figure in a round-table format. Instead, I am expected to be the “expert” of the two papers I present in the course, which is helpful for practicing presentation skills at the cost of a full understanding of the material. Here are some improvements that I would suggest for the proseminar course: 1. Do not combine Neuro and MCB. 2. Consider reading papers by visiting lecturers as preparation for the weekly seminar (would help to be fully engaged/connected during those talks). There could be a mix of full paper presentations and round-table discussion formats wherein each student explains a figure. 3. If a separate grant-writing course is not offered (although it should be), let’s spend the first few weeks reading actual NSF and NRSA proposals and their scores, then let’s read new ones and score them ourselves and compare to actual scores received. None of us have ever seen an NRSA, yet we are told to write “specific aims” as a writing assignment. We would be way less clueless if we were taught the basic format. 4. Let’s have the goal of producing a grant or some portion thereof by the end of the class, ideally having gone through a couple of revisions.</p>
+<p>I don’t think reading/evaluating literature is important for proseminar, since that is covered in other courses (cellular, systems).</p>
+<p>I think it would be more useful if neuro and molecular bio students were in separate classes, or if the material was more equally divided between the two subjects. I have learned a lot about epigenetics, which I am grateful for, but I thought the point of the class was to learn to present and discuss research. Mostly I have been learning about epigenetics.</p>
+<p>My opinion on this may change as the course goes on, but so far I have not been particularily impressed with the structure of our current proseminar class. Although we are cover reading and evaluating literature critically as well as presentation skills, writing in the course so far has been minimal and I am not sure if or what kind of grant proposal we will be writing later in the year. In general the skills are the same, but the topic focus (epigenetics) is not incredibly helpful for increasing my knowledge of the field of neuroscience and I feel that I am missing out on the opportunity to discuss relevant neuroscience papers with a group of peers.</p>
+<p>I think proseminar should be the first step in students being able to be successful in succeeding at both their qualifying exams. While I am always conflicted about focusing any coursework on “good test taking,” I feel like what the neuro program lacked during my time was adequate practice in what we would later be examined on.</p>
+<p>Proseminar should read NRSA/R01 Research Strategies. It should be about learning how to design a series programmatic experiments, and what kind of experiments are valuable.</p>
+<p>The Proseminar class should definitely teach you how to write a grant proposal. Furthermore, it should require each student to submit the proposal simply to gain the experience of that process. It does not matter whether it is accepted or not, just that the student learns how to do the process and actually gains experience doing it.</p>
+<p>My proseminar was barely or not at all useful. Our format was similar to a journal club format where we were paired with a senior grad student or postdoc from a lab and worked with that person to interpret a paper in that person’s field. I was exposed to literature that I would not normally read, but I feel like that experience could be gained through other coursework. I would have strongly preferred a course in grant writing instead.</p>
+<p>My experience of proseminar was that it was a chance to present in front of others. I had done this before, so it was not that necessary for me, though I think it was valuable for some. It was also the place that I felt most involved with the masters students, which is probably valuable for them. I like the idea of having a grant writing course or seminar. It could be a valuable addition to proseminar, or a separate workshop given to 1st/2nd years.</p>
+<p>Most people used it as nap time.</p>
+<p>When I took proseminar, it was mostly how to dissect and interpret a research article, which is redundant because ALL of the other graduate level courses already teach that. Proseminar should plainly state what is required of incoming students to successfully finish graduate school in a reasonable amount of time. Provide life advice, a statistics crash course, how to create figures, what to consider when deciding a thesis lab, PI-student relationship advice, etc.</p>
+<p>My proseminar had a journal club format, which was NOT HELPFUL at all. Most of us have been reading and presenting literature since undergrad. I really think this class needs to be restructured as a grant writing workshop. In my ideal proseminar, students would read papers for the first half of the semester, then choose their favorite and write a grant that focuses on follow-up experiments in that area of research. For the last couple of classes, everyone would present their grants.</p>
+<p>The cellular neuro course seems to largely be focused on reading and evaluating literature, so I don’t think Proseminar needs that same emphasis.</p>
+<p>This course essentially served as a “journal club” however participation was minimal from the audience (aka class) and thus boiled down to preparing a presentation 1 week, and then have a brief overview of articles for the rest of the semester. It in no way prepared me for my outside exam, or served to provide any more breadth of knowledge than regular journal club attendance.</p>
+<p>It should be a way to bring everyone up to speed (since neuroscience has peopel coming from different backgrounds). So the early months should focus on some methods. The later months should focus entirely on preparing for the outside.</p>
+<p>One model I have heard of that might work better is done at Tuft’s where a faculty member along with 2nd year graduate students read a paper from a visiting speaker and then discuss the paper and the talk afterwards. However, the MCB model seems to also be effective (but with a different learning goal) of giving students the skill set to write grants.</p>
+<p>Neuro and MCB proseminars should be kept separate to maximize student interest and engagement. I think it would be helpful for students to be assigned papers to present individually (and received thorough, detailed and constructive criticism from peers and teacher). In addition to student presentations, course instructors should teach students all about what grant proposals are, how they are formatted, how they are awarded etc. A final project for the course should require students to write a grant proposal of their own.</p>
+<p>I would have preferred a neuroscience focused proseminar course.</p>
+<p>For most grad students in the program I think proseminar is the first opportunity to start learning presentation skills, which are essential and shouldn’t be displaced. However, this course (or another very much like it) seems like the logical place to also introduce grant-writing skills. It almost feels like the logical parsing of the first year in this course should be one semester devoted to presentations and the next to grant writing.</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="overview" class="section level1">
+<h1><span class="header-section-number">4</span> Overview</h1>
+<div id="overall-how-happy-are-you-with-your-programs-structure" class="section level2 tabset">
+<h2><span class="header-section-number">4.1</span> Overall, how happy are you with your programs’ structure?</h2>
+<p><img src="Survey_Analysis_files/figure-html/plt27-1.png" width="864" /></p>
+<div id="mcb-responses-by-year-22" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> MCB Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt27_1-1.png" width="864" /></p>
+</div>
+<div id="neuro-responses-by-year-22" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Neuro Responses by Year</h3>
+<p><img src="Survey_Analysis_files/figure-html/plt27_2-1.png" width="864" /></p>
+</div>
+</div>
+<div id="general-comments" class="section level2 tabset">
+<h2><span class="header-section-number">4.2</span> General Comments</h2>
+<div id="mcb-2" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> MCB</h3>
+<p>Mandatory grant writing should be part of 2nd year curriculum, submitting inside proposal is more meaningful than the outside proposal.</p>
+<p>Mandatory journal club presentations are a waste of time, nobody wants to present and nobody wants to attend. This time could be used to discuss useful skills/strategies for grad school and, more importantly, developing our careers after grad school.</p>
+<p>Outside makes a lot more sense and was actually helpful in thinking through thesis project. Inside was a waste of time.</p>
+<p>Generally speaking, I don’t believe this department or faculty really cares about the students.</p>
+<p>I’m a third year and feel completely intimidated at the thought of submitting an NRSA or any kind of grant. This is not where I wanted to be at this point in my career. The program needs to integrate grant applications earlier into the training, perhaps as soon as first semester of first year.</p>
+</div>
+<div id="neuro-2" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Neuro</h3>
+<p>many of these questions could be solved by the faculty and students setting out defined “learning goals”. I think these learning goals should be different for each requirement (Outside, Inside, Pizza Talks, Journal Club) and should be explained to the students very early in their first year</p>
+<p>we are missing a lot of structured skill sets in the neuro program. Statistics/data analysis, experimental design, evaluating literature effectively, grant writing, presenting (actually critique rather than just doing Pizza Talks).</p>
+<p>one important consideration to keep in mind is the allowance of time for the completion of “extra” activities such as grant writing. During the time that I was writing my NRSA, I felt pressured to continue producing research at the same rate as before even though I had less than a month of advance notice before the deadline to complete the grant from scratch. I think that it will be miserable to make grant writing during one or more years mandatory if the faculty are not willing to adjust their expectations of research output. Writing grants is a critical part of succeeding in our field and should not be treated as “homework” to be done outside of already incredibly long days spent in lab. I understand that research output is also critical, but I personally feel that some decrement in productivity is necessary for novice grant writers to have enough time to produce quality grants.</p>
+<p>I am quite happy with the rotation structure but am so far confused about the content and purpose of the inside and outside exam.</p>
+<p>The curriculum offered by Brandeis is part of what has molded it into a top 10 school it is a great curriculum, but there is always room for improvements…taking principles and cellular my first semester was invaluable. I hear that proseminar has precluded students from taking cellular in their first semester, which saddens me, as I found it to be an incredible compliment to priciples. On the other hand, some exposure to grant writing will be useful and necessary to many PhD candidates. As a 3rd year that wants to write a grant, but still doesn’t really know how, I think it would have been useful to write a mock/real grant with several revisions/feedback my 1st or 2nd year.</p>
+<p>There should be a course solely dedicated to help develop different writing styles in science- whether it is a news &amp; views, research report, literature review, and grant format. This course should be required for Spring of 1st year.</p>
+<p>For first years, it should be communicated that rotations are actually the most important and should be highest priority! I think a lot of us freak out unnecessarily about course work and all the seminars we have to go to– which are still important, but the four lab rotations are what really make Brandeis’s program unique, because you can see how you fit into a lab, integrate yourself into the Brandeis Life Sciences community, and build the foundations of your research.</p>
+<p>I do have the sense that a lot of effort and thoughtful evaluation takes part on behave of the faculty and staff that run the neuro program, and for the most part they have created a graduate experience that is unique compared to other programs that I have head about (from peers at other universities). However, I do feel as though students are on their own when it comes to learning how to write a grant. I personally think that I am under prepared to write/submit a grant.</p>
+<p>our program sorely lacks statistical/programming training. This issue wasn’t brought up in the town hall meeting, but I think that the general statistics and coding skills of current students in the program are abysmally low. A programming and a proper statistics class should be mandatory for all grad students - and these are skills that are not limited to the program. These are skills that will be very relevant to the non-academic job market most of us will enter as well.</p>
+<p>grant writing should be mandatory in the second year, not the first year. Then we have more time to get a handle on what we want to research before we try to write a grant for it. Improved clarity of program structure and expectations of trainees combined with more thoughtful assessment of trainees’ progress would greatly benefit the program.</p>
+<p>I’d like to say that the town hall meeting that initiated this survey was itself a very good idea and should be continued into the future. I think at least once a semester would be ideal.</p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
